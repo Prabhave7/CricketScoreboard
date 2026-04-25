@@ -1,0 +1,235 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  min-height: 100vh;
+  padding: 20px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Main title */
+h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  margin-bottom: 5px;
+  background: linear-gradient(45deg, #ffd700, #ffed4e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Control buttons (Reset, Change) */
+.reset, .inning {
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.reset {
+  background: linear-gradient(45deg, #ff6b6b, #ff5252);
+  color: white;
+  display: none;
+}
+
+.inning {
+  background: linear-gradient(45deg, #4ecdc4, #44a08d);
+  color: white;
+}
+
+.reset:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
+
+.inning:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
+
+/* Team containers */
+.team1, .team2 {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 25px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  border: 1px solid rgba(255,255,255,0.2);
+  transition: transform 0.3s ease;
+}
+
+.team1:hover, .team2:hover {
+  transform: scale(1.02);
+}
+
+/* Team names */
+.team1 h3, .team2 h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #ffd700;
+}
+
+/* Score display */
+.run,.dash,.wicket,.over {
+  display: inline-block;
+  font-size: 2.5rem;
+  font-weight: bold;
+  font-family: 'Courier New', monospace;
+  color: #00ff88;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  margin-bottom: 5px;
+}
+
+.wicket {
+  color: #ff6b6b;
+  font-weight: bold;
+  margin: 0 5px;
+}
+
+.over {
+  font-size: 1.5rem;
+  color: #4ecdc4;
+  font-weight: bold;
+}
+
+/* Run buttons row */
+div:has(.b) {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.b {
+  width: 70px;
+  height: 70px;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.b:nth-child(1) { background: linear-gradient(45deg, #4caf50, #388e3c); } /* 0 */
+.b:nth-child(2) { background: linear-gradient(45deg, #2196f3, #1976d2); } /* 1 */
+.b:nth-child(3) { background: linear-gradient(45deg, #ff9800, #f57c00); } /* 2 */
+.b:nth-child(4) { background: linear-gradient(45deg, #9c27b0, #7b1fa2); } /* 3 */
+.b:nth-child(5) { background: linear-gradient(45deg, #ff5722, #e64a19); } /* 4 */
+.b:nth-child(6) { background: linear-gradient(45deg, #ffc107, #ff9800); } /* 6 */
+
+.b:hover {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 6px 25px rgba(0,0,0,0.4);
+}
+
+/* Wicket button */
+.w {
+  display: block;
+  margin: 0 auto 20px;
+  width: 80px;
+  height: 80px;
+  border: none;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #f44336, #d32f2f);
+  color: white;
+  font-size: 1.4rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+  letter-spacing: 2px;
+}
+
+.w:hover {
+  transform: scale(1.15);
+  box-shadow: 0 8px 30px rgba(244, 67, 54, 0.6);
+}
+
+/* Description */
+.description {
+  min-height: 20px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #e0e0e0;
+  text-align: center;
+  margin: 15px 0;
+  padding: 10px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+}
+
+/* Note */
+p {
+  font-size: 0.9rem;
+  color: #b0b0b0;
+  text-align: center;
+  font-style: italic;
+  margin-top: 10px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+    gap: 15px;
+  }
+  
+  h1 {
+    font-size: 2.2rem;
+  }
+  
+  .team1, .team2 {
+    width: 100%;
+    max-width: 350px;
+    padding: 20px;
+  }
+  
+  .run {
+    font-size: 3rem;
+  }
+  
+  .b {
+    width: 60px;
+    height: 60px;
+    font-size: 1.3rem;
+  }
+  
+  div:has(.b) {
+    gap: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .run {
+    font-size: 2.5rem;
+  }
+  
+  .dash, .wicket {
+    font-size: 2.5rem;
+  }
+}
