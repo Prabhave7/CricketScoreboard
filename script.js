@@ -46,7 +46,7 @@ function over(){
   if(ball==6 && wicket<10){
     score1.children[4].innerHTML = Number(score1.children[4].innerHTML) + 1;
     ball = 0;
-    description.innerHTML += '||';
+    description.innerHTML += '##';
     score1.children[6].innerHTML = ball;
   }
 };
